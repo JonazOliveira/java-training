@@ -9,25 +9,16 @@
 
 public class HighestAndLowest {
     public static String highAndLow(String stringNumbers) {
-        String[] numbers = stringNumbers.split(" ");
-        int max = 0;
-        int min = 0;
+        String[] array = stringNumbers.split(" ");
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
 
-        for(int i = 0; i < numbers.length; i++){
-            if(i == 0) {
-                max = Integer.parseInt(numbers[i], 10);
-                min = Integer.parseInt(numbers[i], 10);
-                continue;
-            }
-            if(max < Integer.parseInt(numbers[i], 10)){
-                max = Integer.parseInt(numbers[i], 10);
-            }
-            if(min > Integer.parseInt(numbers[i], 10)) {
-                min = Integer.parseInt(numbers[i], 10);
-            }
+        for (int i=0; i< array.length; i++){
+            int value = Integer.parseInt(array[i]);
+            if (value < min) min = value;
+            if (value > max) max = value;
         }
-
-        String result = max + " " + min;
-        return result;
+        
+        return String.format("%d %d", max, min);
     }
 }
