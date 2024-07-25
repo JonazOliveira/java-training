@@ -12,16 +12,15 @@
 
 public class SquareEveryDigit {
     public int squareDigits(int number) {
-        char[] numberCharArray = String.valueOf(number).toCharArray();
-        StringBuilder newNumberString = new StringBuilder();
+        String strDigits = String.valueOf(number);
+        String result = "";
 
-        for(int i = 0; i < numberCharArray.length; i++){
-            int num = Integer.parseInt(String.valueOf(numberCharArray[i]));
-            newNumberString.append(num*num);
+        for (char c : strDigits.toCharArray()) {
+            int digit = Character.digit(c, 10);
+            result += digit * digit;
         }
 
-        int newNumber = Integer.parseInt(newNumberString.toString());
-        return newNumber;
+        return Integer.parseInt(result);
     }
 
 }
