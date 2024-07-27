@@ -10,7 +10,13 @@
 
 public class NumberToReversedArray {
     public static int[] digitize(long number) {
-        int[] array = new int[1];
+        char[] charArray = new StringBuilder().append(number).reverse().toString().toCharArray();
+        int[] array = new int[charArray.length];
+
+        for(byte i = 0; i < charArray.length; i++){
+            array[i] = Integer.parseInt(String.valueOf(charArray[i]),10);
+        }
+
         return array;
     }
 }
