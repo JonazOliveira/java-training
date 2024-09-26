@@ -1,2 +1,2 @@
 # java-training
-My codes java
+My codes java training
