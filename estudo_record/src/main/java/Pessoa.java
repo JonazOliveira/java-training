@@ -5,8 +5,18 @@ public class Pessoa {
     private String nome;
     private int idade;
 
+    public Pessoa() {
+    }
+
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    public Pessoa(int idade) {
+        this.idade = idade;
+    }
+
     public Pessoa(String nome, int idade) {
-        super();
         this.nome = nome;
         this.idade = idade;
     }
@@ -49,6 +59,6 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa [nome=" + nome + ", idade=" + idade + "]";
+        return "Pessoa[nome=" + nome + ", idade=" + idade + "]";
     }
 }
